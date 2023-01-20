@@ -73,6 +73,26 @@ dotnet run
 dotnet dev-certs https --trust
 ```
 
-# Easter Egg?
-- https://localhost:5001/swagger/ is the WeatherForecast page
+# General APIs View
+- https://localhost:5001/swagger/
 
+# Catalog ops
+- GET/items
+- GET/items/{id}
+- POST/items
+- PUT/items/{id}
+- DELETE/items/{id}
+
+# Data Transfer Object DTO
+- object that transfers data between processes
+
+1. Create `DTOs.cs`
+  - declare namespace = foldername.filename
+  - declare DTOs of ops
+  - GUID = Global Unique Identifie
+  - imported Guid and DateTimeOffset from namespace `System`
+  - can also add decorators to record attrs like `Required`
+2. Add controllers `ItemsController.cs`
+  - declare namespace
+  - declare public class, derived from `ControllerBase` (`using Microsoft.AspNetCore.Mvc`) bcs it provides useful methods to handle HTTP req
+  - add api controller attributes `[ApiController]`
